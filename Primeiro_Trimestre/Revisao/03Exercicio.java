@@ -13,7 +13,7 @@ public class Main{
         String[] vetor = new String[tamanho];
         for(int i=0; i<vetor.length; i++){
             System.out.print("Informe o "+(i+1)+"° nome: ");
-            vetor[i] = scanner.nextLine();
+            vetor[i] = scanner.nextLine().toLowerCase();
 
         }
         bubbleSort(vetor);
