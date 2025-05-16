@@ -36,7 +36,7 @@ public class Main{
 	}
 
 	
-	
+	 
 	while(i<=meio){
 	vetorTemporario[k++] = vetor[i++];
 
