@@ -1,5 +1,5 @@
 // Recursividade
-// Soma de dois elementos 
+// Soma de todos os elementos 
 
 public class Main{
   public static void main(String[] args){
