@@ -9,8 +9,8 @@
 // ele aponta para NULO
 // INTERESSANTE --> armazenar quem é o ultimo para não termos que percorrer
 
-public class ListaEncadeada{
-    No cabeca;
+public class ListaEncadeada<E>{
+    No<E> cabeca;
 
 
     public void adicionarInicio(int valor){
@@ -53,11 +53,11 @@ public class ListaEncadeada{
 
 
 
-    private class No {
-        int valor;
-        No proximo; // no sempre mesmo tipo da classe
+    private static class No<T> { // static para quando chamarmos a ListaEncadeada não criar na memoria uma conexão entre as duas 
+        T valor;
+        No<T> proximo; // no sempre mesmo tipo da classe
 
-        public No(int valor) {
+        public No(T valor) {
             this.valor = valor;
             this.proximo = null;
         }
