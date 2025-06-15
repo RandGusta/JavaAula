@@ -1,5 +1,6 @@
 // linked list 
-// composta por nós com as informações básicas de valor dele (int, string...) e ponteiro (Aponta para o próximo elemento --> referencia para o próximo elemento [ outro elemento do mesmo tipo do nó])
+// composta por nós com as informações básicas de valor dele (int, string...) e ponteiro 
+// (Aponta para o próximo elemento --> referencia para o próximo elemento [outro elemento do mesmo tipo do nó])
 // ultimo nó aponta para o nulo 
 // Cabeça --> inicio da lista 
 // Ex. para adicionar um elemento no INICIO da lista --> fazer com que esse novo elemento aponte
@@ -9,49 +10,41 @@
 // ele aponta para NULO
 // INTERESSANTE --> armazenar quem é o ultimo para não termos que percorrer
 
-public class ListaEncadeada<E>{
+public class ListaEncadeada<E> { // E --> Tipo genérico
     No<E> cabeca;
 
-
-    public void adicionarInicio(int valor){
-        No novoElemento = new No(valor); // contrutor que criamos para receber valor
-        if(cabeca == null){
+    public void adicionarInicio(E valor) { // agora recebe tipo genérico
+        No<E> novoElemento = new No<>(valor); // contrutor que criamos para receber valor
+        if (cabeca == null) {
             cabeca = novoElemento;
-        } else{
+        } else {
             novoElemento.proximo = cabeca;
             cabeca = novoElemento;
         }
     }
 
-    public void adicionarFim(int valor){
-        No novoElemento = new No(valor);
-        No aux = cabeca;
-        if(cabeca ==  null){
+    public void adicionarFim(E valor) {
+        No<E> novoElemento = new No<>(valor);
+        No<E> aux = cabeca;
+        if (cabeca == null) {
             cabeca = novoElemento;
         } else {
-            while(aux.proximo != null){
+            while (aux.proximo != null) {
                 aux = aux.proximo;
             }
             aux.proximo = novoElemento;
-
         }
-
     }
 
-    public void imprimir(){
-        No aux = cabeca;
-        while(aux != null){
+    public void imprimir() {
+        No<E> aux = cabeca;
+        while (aux != null) {
             System.out.print(aux.valor + "--> ");
             aux = aux.proximo;
         }
         System.out.print("Null");
         System.out.println();
-
     }
-
-
-
-
 
     private static class No<T> { // static para quando chamarmos a ListaEncadeada não criar na memoria uma conexão entre as duas 
         T valor;
@@ -61,7 +54,5 @@ public class ListaEncadeada<E>{
             this.valor = valor;
             this.proximo = null;
         }
-
     }
 }
-
