@@ -13,8 +13,8 @@
 // Para ser AVL:  -1 <= FB <= 1
 
 // Interpretação:
-// FB > 0  → árvore mais pesada à ESQUERDA
-// FB < 0  → árvore mais pesada à DIREITA
+// FB > 1  → árvore mais pesada à ESQUERDA
+// FB < -1  → árvore mais pesada à DIREITA
 
 // Definição de altura:
 // Altura(node) = 1 + max(altura(left), altura(right))
